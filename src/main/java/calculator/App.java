@@ -5,6 +5,11 @@ import java.util.*;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        //초기값
+        int result = 0;
+        //while 문 제어 초기값
+        boolean flag = true;
         //첫번째 숫자
         System.out.print("첫 번째 숫자를 입력하세요: ");
         int x = sc.nextInt();
@@ -18,5 +23,30 @@ public class App {
         //두번째 숫자
         System.out.print("두 번째 숫자를 입력하세요: ");
         int y = sc.nextInt();
+        sc.nextLine();
+
+        try {
+            switch (operator) {
+                case '+':
+                    result = x + y;
+                    System.out.println("결과: " + result);
+                    break;
+                case '-':
+                    result = x - y;
+                    System.out.println("결과: " + result);
+                    break;
+                case '*':
+                    result = x * y;
+                    System.out.println("결과: " + result);
+                    break;
+                case '/':
+                    result = x / y;
+                    System.out.println("결과: " + result);
+                    break;
+            }
+            //분모가 0일떄 내뱉는 에러
+        } catch (ArithmeticException  e) {
+            System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+        }
     }
 }
