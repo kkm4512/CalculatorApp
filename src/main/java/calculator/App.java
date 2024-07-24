@@ -12,7 +12,8 @@ public class App {
         boolean flag = true;
         //results 배열에 하나씩 집어넣기 위한 idx
         int i = 0;
-        int[] results = new int[10];
+        // 10개를 초과하는 경우 가장 먼저 저장된결과를 삭제하고 새로운 연산결과가 저장 되어야하기때문에 FIFO 구조인 queue구조 선택
+        Queue queue = new LinkedList<>();
 
         while (flag) {
             //첫번째 숫자
@@ -52,21 +53,14 @@ public class App {
             } catch (ArithmeticException  e) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
             } finally {
-                //i가 9라는건 results에 10개의 요소가 저장 되어있다는 뜻
-                if (i == 9) {
-                    for ( int j=0; j<results.length-1; j++ ) {
-                        results[j] = results[j+1];
-                    }
-                    i--;
-                }
-                results[i] = result;
-                i++;
+                queue.add(result);
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-                String isExit = sc.nextLine();
-                if (isExit.equals("exit")) flag = !flag;
+                String input = sc.nextLine();
+                if (input.equals("exit")) flag = !flag;
+                else if (input.equals("remove")) queue.poll();
             }
         }
         //queue 배열 내부
-        System.out.println(Arrays.toString(results));
+        System.out.println(queue);
     }
 }
