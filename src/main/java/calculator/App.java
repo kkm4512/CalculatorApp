@@ -13,7 +13,7 @@ public class App {
         //results 배열에 하나씩 집어넣기 위한 idx
         int i = 0;
         // 10개를 초과하는 경우 가장 먼저 저장된결과를 삭제하고 새로운 연산결과가 저장 되어야하기때문에 FIFO 구조인 queue구조 선택
-        Queue queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
 
         while (flag) {
             //첫번째 숫자
@@ -52,15 +52,23 @@ public class App {
                 //분모가 0일떄 내뱉는 에러
             } catch (ArithmeticException  e) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                result = -9999;
             } finally {
                 queue.add(result);
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
                 String input = sc.nextLine();
-                if (input.equals("exit")) flag = !flag;
-                else if (input.equals("remove")) queue.poll();
+                switch (input){
+                    case "exit":
+                        flag = !flag;
+                        break;
+                    case "remove":
+                        queue.poll();
+                        break;
+                    case "inquiry":
+                        System.out.println(queue);
+                        break;
+                }
             }
         }
-        //queue 배열 내부
-        System.out.println(queue);
     }
 }
