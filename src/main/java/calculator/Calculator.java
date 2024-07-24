@@ -1,17 +1,17 @@
 package calculator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    List<Integer> results = new ArrayList<>();
+    Queue<Integer> results = new LinkedList<>();
 
     public int calculate(int x, String operator, int y) throws Exception {
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리
         try {
             //연산자 확인
-            if (operator.equals("+") && operator.equals("-") && operator.equals("*") && operator.equals("/"))
+            if (!operator.equals("+") && !operator.equals("-") && !operator.equals("*") && !operator.equals("/"))
                 throw new HandleInputMisMatchException(operator);
             //분모확인
             if (y == 0) throw new HandleArithmeticException(y);
