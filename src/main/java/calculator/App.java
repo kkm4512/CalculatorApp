@@ -10,6 +10,11 @@ public class App {
         int result = 0;
         //while 문 제어 초기값
         boolean flag = true;
+        //results 배열에 하나씩 집어넣기 위한 idx
+        int i = 0;
+
+        //10개 배성 선언
+        int[] results = new int[10];
 
         while (flag) {
             //첫번째 숫자
@@ -49,10 +54,15 @@ public class App {
             } catch (ArithmeticException  e) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
             } finally {
+                results[i] = result;
+                i++;
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
                 String isExit = sc.nextLine();
                 if (isExit.equals("exit")) flag = !flag;
             }
         }
+
+        //배열 내부 출력
+        System.out.println(Arrays.toString(results));
     }
 }
