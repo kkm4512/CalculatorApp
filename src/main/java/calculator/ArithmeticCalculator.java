@@ -10,13 +10,15 @@ public class ArithmeticCalculator {
     private final MultiplyOperator multiplyOperator = new MultiplyOperator();
     //나눗셈
     private final SubtractOperator subtractOperator = new SubtractOperator();
+    //나머지
+    private final ModOperator modOperator = new ModOperator();
 
     //사칙연산 수행
     public int calculate(int x, String operator, int y) throws Exception {
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리
         try {
             //연산자 확인
-            if (!operator.equals("+") && !operator.equals("-") && !operator.equals("*") && !operator.equals("/"))
+            if (!operator.equals("+") && !operator.equals("-") && !operator.equals("*") && !operator.equals("/") && !operator.equals("%"))
                 throw new HandleInputMisMatchException(operator);
             //분모확인
             if (y == 0) throw new HandleArithmeticException(y);
@@ -35,7 +37,8 @@ public class ArithmeticCalculator {
         if (operator.equals("+")) result = addOperator.operate(x, y);
         else if (operator.equals("-")) result = divideOperator.operate(x, y);
         else if (operator.equals("*")) result = multiplyOperator.operate(x, y);
-        else result = subtractOperator.operate(x, y);
+        else if (operator.equals("/")) result = subtractOperator.operate(x, y);
+        else result = modOperator.operate(x, y);
         return result;
     }
 }

@@ -34,6 +34,7 @@ public class App {
                 sc.nextLine();
                 try {
                     int result = arithmeticCalculator.calculate(x, operator, y);
+                    System.out.println("결과: " + result);
                     //하나씩 저장
                     calculator.setResult(result);
                 } finally {
