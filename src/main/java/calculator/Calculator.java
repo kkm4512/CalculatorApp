@@ -5,7 +5,19 @@ import java.util.Queue;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    Queue<Integer> results = new LinkedList<>();
+    private final Queue<Integer> results = new LinkedList<>();
+
+    public Queue<Integer> getResults() {
+        return results;
+    }
+
+    public void setResult(int result) {
+        results.add(result);
+    }
+
+    public void removeResult() {
+        results.poll();
+    }
 
     public int calculate(int x, String operator, int y) throws Exception {
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리

@@ -27,7 +27,8 @@ public class App {
             sc.nextLine();
             try {
                 int result = calculator.calculate(x, operator, y);
-                calculator.results.add(result);
+                //하나씩 저장
+                calculator.setResult(result);
             } finally {
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
                 String input = sc.nextLine();
@@ -36,10 +37,10 @@ public class App {
                         flag = !flag;
                         break;
                     case "remove":
-                        calculator.results.poll();
+                        calculator.removeResult();
                         break;
                     case "inquiry":
-                        System.out.println(calculator.results);
+                        System.out.println(calculator.getResults());
                         break;
                 }
             }
