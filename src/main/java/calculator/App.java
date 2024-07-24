@@ -8,7 +8,10 @@ public class App {
 
         //초기값
         int result = 0;
+        //while 문 제어 초기값
+        boolean flag = true;
 
+        while (flag) {
             //첫번째 숫자
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int x = sc.nextInt();
@@ -45,6 +48,11 @@ public class App {
                 //분모가 0일떄 내뱉는 에러
             } catch (ArithmeticException  e) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+            } finally {
+                System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+                String isExit = sc.nextLine();
+                if (isExit.equals("exit")) flag = !flag;
             }
+        }
     }
 }
