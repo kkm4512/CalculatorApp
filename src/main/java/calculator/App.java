@@ -6,6 +6,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
+        //사칙연산,원의넓이 클래스 인스턴스화
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
         System.out.println("원의넓이를 구하시려면 원의넓이, 사칙연산을 수행하시려면 사칙연산을 기재하세요");
         String firstInput = sc.nextLine();
 
@@ -30,7 +33,7 @@ public class App {
                 int y = sc.nextInt();
                 sc.nextLine();
                 try {
-                    int result = calculator.calculate(x, operator, y);
+                    int result = arithmeticCalculator.calculate(x, operator, y);
                     //하나씩 저장
                     calculator.setResult(result);
                 } finally {
@@ -52,7 +55,7 @@ public class App {
         } else if (firstInput.equals("원의넓이")) {
             System.out.println("원의 반지름값을 기재해주세요");
             double radius = sc.nextDouble();
-            System.out.println(calculator.calculateCircleArea(radius));
+            System.out.println(circleCalculator.calculateCircleArea(radius));
         }
     }
 }
