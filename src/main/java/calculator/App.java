@@ -5,6 +5,7 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+
         Calculator calculator = new Calculator();
         //사칙연산,원의넓이 클래스 인스턴스화
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator();
@@ -37,6 +38,8 @@ public class App {
                     System.out.println("결과: " + result);
                     //하나씩 저장
                     calculator.setResult(result);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 } finally {
                     System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
                     String input = sc.nextLine();
