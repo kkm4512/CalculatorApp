@@ -7,6 +7,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
+
         //while 문 제어 초기값
         boolean flag = true;
 
