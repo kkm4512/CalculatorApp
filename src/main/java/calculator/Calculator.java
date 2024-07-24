@@ -15,7 +15,7 @@ public class Calculator {
         results.add(result);
     }
 
-    public void removeResult() {
+    public void deleteResult() {
         results.poll();
     }
 

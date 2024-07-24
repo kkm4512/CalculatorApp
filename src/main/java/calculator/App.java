@@ -37,7 +37,7 @@ public class App {
                         flag = !flag;
                         break;
                     case "remove":
-                        calculator.removeResult();
+                        calculator.deleteResult();
                         break;
                     case "inquiry":
                         System.out.println(calculator.getResults());
