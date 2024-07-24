@@ -40,7 +40,7 @@ public class App {
                         calculator.deleteResult();
                         break;
                     case "inquiry":
-                        System.out.println(calculator.getResults());
+                        System.out.println(calculator.getAllResults());
                         break;
                 }
             }

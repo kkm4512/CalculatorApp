@@ -7,7 +7,7 @@ public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     private final Queue<Integer> results = new LinkedList<>();
 
-    public Queue<Integer> getResults() {
+    public Queue<Integer> getAllResults() {
         return results;
     }
 
