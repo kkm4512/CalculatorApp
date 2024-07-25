@@ -1,4 +1,4 @@
-package calculator;
+package calculator.enums;
 
 import calculator.exception.HandleInputMisMatchException;
 
