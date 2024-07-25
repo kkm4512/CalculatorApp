@@ -1,4 +1,4 @@
-package calculator;
+package calculator.caculators;
 
 //원의넓이 계산 클래스
 public class CircleCalculator {
