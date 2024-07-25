@@ -1,4 +1,4 @@
-package calculator;
+package calculator.util;
 
 public class GenericConvertInput {
     public static <T extends Number> T GenericConvertInput(Class<T> argType, String x) {
