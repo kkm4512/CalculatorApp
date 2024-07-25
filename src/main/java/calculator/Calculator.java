@@ -10,7 +10,7 @@ public class Calculator<T, R> {
     //초기화 시켜주는 부분
     private final Queue<R> results = new LinkedList<>();
     /* 원의 넓이를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private final List<R> circleAreas = new ArrayList<>();
+    private final Queue<Double> circleAreas = new LinkedList<>();
 
     //조회
     public Queue<R> getAllResults() {
@@ -29,13 +29,18 @@ public class Calculator<T, R> {
 
 
     //조회
-    public List<R> getCircleAreas() {
+    public Queue<Double> getCircleAreas() {
         return circleAreas;
     }
 
     //추가
-    public void setCircleAreas(R circleArea) {
+    public void setCircleArea(Double circleArea) {
         circleAreas.add(circleArea);
+    }
+
+    //삭제
+    public void deleteCircleArea() {
+        circleAreas.poll();
     }
 
 
