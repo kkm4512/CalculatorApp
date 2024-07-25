@@ -1,5 +1,8 @@
 package calculator;
 
+import calculator.util.GenericConvertInput;
+import calculator.util.GetMaxValue;
+
 import java.util.*;
 
 public class Main<T extends Number, R extends Number> {

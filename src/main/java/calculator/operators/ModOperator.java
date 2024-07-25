@@ -1,4 +1,8 @@
-package calculator;
+package calculator.operators;
+
+import calculator.util.GenericConvertOperator;
+import calculator.Operate;
+import calculator.OperatorType;
 
 //나머지
 //이후 수정 필요
