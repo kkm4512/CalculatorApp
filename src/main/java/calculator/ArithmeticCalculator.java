@@ -1,5 +1,7 @@
 package calculator;
 
+import calculator.exception.HandleArithmeticException;
+import calculator.exception.HandleInputMisMatchException;
 import calculator.operators.AddOperator;
 import calculator.operators.DivideOperator;
 import calculator.operators.ModOperator;
