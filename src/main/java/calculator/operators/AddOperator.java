@@ -1,4 +1,8 @@
-package calculator;
+package calculator.operators;
+
+import calculator.util.GenericConvertOperator;
+import calculator.Operate;
+import calculator.OperatorType;
 
 //T 매개변수 타입
 //R return 타입

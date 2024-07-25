@@ -1,5 +1,7 @@
 package calculator;
 
+import calculator.util.GenericConvertOperator;
+
 //나눗셈
 //이후 수정 필요
 public class SubtractOperator<T extends Number, R extends Number> implements Operate<T, R> {
