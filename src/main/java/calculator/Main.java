@@ -1,5 +1,8 @@
 package calculator;
 
+import calculator.caculators.ArithmeticCalculator;
+import calculator.caculators.Calculator;
+import calculator.caculators.CircleCalculator;
 import calculator.util.GenericConvertInput;
 import calculator.util.GetMaxValue;
 

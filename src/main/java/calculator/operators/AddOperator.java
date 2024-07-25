@@ -1,7 +1,7 @@
 package calculator.operators;
 
 import calculator.util.GenericConvertOperator;
-import calculator.Operate;
+import calculator.interfaces.Operate;
 import calculator.enums.OperatorType;
 
 //T 매개변수 타입

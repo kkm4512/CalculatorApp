@@ -1,7 +1,7 @@
 package calculator.operators;
 
 import calculator.util.GenericConvertOperator;
-import calculator.Operate;
+import calculator.interfaces.Operate;
 import calculator.enums.OperatorType;
 
 //뺄셈
