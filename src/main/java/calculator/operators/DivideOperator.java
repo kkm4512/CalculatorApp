@@ -2,7 +2,7 @@ package calculator.operators;
 
 import calculator.util.GenericConvertOperator;
 import calculator.Operate;
-import calculator.OperatorType;
+import calculator.enums.OperatorType;
 
 //뺄셈
 //이후 수정 필요

@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.enums.OperatorType;
 import calculator.util.GenericConvertOperator;
 
 //나눗셈

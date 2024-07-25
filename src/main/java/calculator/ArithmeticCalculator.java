@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.enums.OperatorType;
 import calculator.exception.HandleArithmeticException;
 import calculator.exception.HandleInputMisMatchException;
 import calculator.operators.AddOperator;

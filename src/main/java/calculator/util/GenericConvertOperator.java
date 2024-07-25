@@ -1,6 +1,6 @@
 package calculator.util;
 
-import calculator.OperatorType;
+import calculator.enums.OperatorType;
 
 //정적 메서드에 제네릭 타입을 넣어줘야할떄면, 제네릭은 독립적으로 움직이기떄문에, 따로 설정해줘야해서, 클래스 단에서 제네릭 설정 필요없음
 public class GenericConvertOperator {
