@@ -1,5 +1,6 @@
-package calculator;
+package calculator.operators;
 
+import calculator.Operate;
 import calculator.enums.OperatorType;
 import calculator.util.GenericConvertOperator;
 
