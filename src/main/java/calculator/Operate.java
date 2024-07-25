@@ -1,5 +1,5 @@
 package calculator;
 
-public interface Operate {
-    int operate(int x, int y);
+public interface Operate<T, R> {
+    R operate(T x, T y);
 }

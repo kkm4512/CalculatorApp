@@ -1,10 +1,11 @@
 package calculator;
 
 //곱셈
-public class MultiplyOperator implements Operate {
+//이후 수정 필요
+public class MultiplyOperator<T extends Number, R extends Number> implements Operate<T, R> {
 
     @Override
-    public int operate(int x, int y) {
-        return x * y;
+    public R operate(T x, T y) {
+        return GenericConvertOperator.genericOperator(x, OperatorType.MUL, y);
     }
 }

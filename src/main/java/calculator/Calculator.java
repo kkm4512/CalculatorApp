@@ -5,20 +5,20 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Calculator {
+public class Calculator<T, R> {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     //초기화 시켜주는 부분
-    private final Queue<Integer> results = new LinkedList<>();
+    private final Queue<R> results = new LinkedList<>();
     /* 원의 넓이를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private final List<Double> circleAreas = new ArrayList<>();
+    private final List<R> circleAreas = new ArrayList<>();
 
     //조회
-    public Queue<Integer> getAllResults() {
+    public Queue<R> getAllResults() {
         return results;
     }
 
     //추가
-    public void setResult(int result) {
+    public void setResult(R result) {
         results.add(result);
     }
 
@@ -29,12 +29,12 @@ public class Calculator {
 
 
     //조회
-    public List<Double> getCircleAreas() {
+    public List<R> getCircleAreas() {
         return circleAreas;
     }
 
     //추가
-    public void setCircleAreas(double circleArea) {
+    public void setCircleAreas(R circleArea) {
         circleAreas.add(circleArea);
     }
 
