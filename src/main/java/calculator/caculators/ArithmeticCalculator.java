@@ -2,7 +2,7 @@ package calculator.caculators;
 
 import calculator.enums.OperatorType;
 import calculator.exception.HandleArithmeticException;
-import calculator.exception.HandleInputMisMatchException;
+import calculator.exception.HandleOperatorMisMatchException;
 import calculator.operators.*;
 
 //사칙연산 계산 클래스
@@ -42,7 +42,7 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
             //분모확인
             if (y.equals(0) && operator.equals("/")) throw new HandleArithmeticException(y);
 
-        } catch (HandleInputMisMatchException | HandleArithmeticException e) {
+        } catch (HandleOperatorMisMatchException | HandleArithmeticException e) {
             throw e;
         }
         //문제없으면 연산 수행

@@ -1,7 +1,8 @@
 package calculator.exception;
 
-public class HandleInputMisMatchException extends Exception {
-    public HandleInputMisMatchException(Object input) {
-        super("Error : 당신이 입력한 연산자 값은 [" + input + "]이지만, 연산자 값은 +,-,*,/,% 만 들어올수 있습니다 !");
+//피연산자가 숫자가 아닐경우 내보낼 exception
+public class HandleInputMisMatchException extends Exception{
+    public HandleInputMisMatchException(){
+        super("피연산자의 타입이 숫자가 아닙니다 !");
     }
 }

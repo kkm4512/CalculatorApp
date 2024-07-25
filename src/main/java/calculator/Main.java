@@ -32,7 +32,6 @@ public class Main<T extends Number, R extends Number> {
         //while 문 제어 초기값
         boolean flag = true;
 
-
         while (flag) {
             if (firstInput.equals("사칙연산")) {
                 //첫번째 숫자
@@ -50,7 +49,7 @@ public class Main<T extends Number, R extends Number> {
                 T y = GenericConvertInput.GenericConvertInput(argType, yInput);
                 R result = null;
                 try {
-                     result = arithmeticCalculator.calculate(x, operator, y);
+                    result = arithmeticCalculator.calculate(x, operator, y);
                     System.out.println("결과: " + result);
                     //하나씩 저장
                     calculator.setResult(result);
@@ -71,7 +70,7 @@ public class Main<T extends Number, R extends Number> {
                             System.out.println(calculator.getAllResults());
                             break;
                         case "max":
-                            System.out.println(getMaxValue.getResultMaxValue(calculator.getAllResults(),result));
+                            System.out.println(getMaxValue.getResultMaxValue(calculator.getAllResults(), result));
                     }
                 }
             } else if (firstInput.equals("원의넓이")) {

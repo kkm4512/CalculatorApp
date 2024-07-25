@@ -1,6 +1,6 @@
 package calculator.enums;
 
-import calculator.exception.HandleInputMisMatchException;
+import calculator.exception.HandleOperatorMisMatchException;
 
 //상수의 집합
 public enum OperatorType {
@@ -24,6 +24,6 @@ public enum OperatorType {
         for (OperatorType op : OperatorType.values()) {
             if (op.getOperator().equals(operator)) return op;
         }
-        throw new HandleInputMisMatchException(operator);
+        throw new HandleOperatorMisMatchException(operator);
     }
 }
