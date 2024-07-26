@@ -20,8 +20,8 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
         this.returnType = returnType;
         addOperator = new AddOperator<>(this.returnType);
         divideOperator = new DivideOperator<>(this.returnType);
-        multiplyOperator  = new MultiplyOperator<>(this.returnType);
-        subtractOperator   = new SubtractOperator<>(this.returnType);
+        multiplyOperator = new MultiplyOperator<>(this.returnType);
+        subtractOperator = new SubtractOperator<>(this.returnType);
         modOperator = new ModOperator<>(this.returnType);
     }
 
@@ -32,7 +32,8 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리
         try {
             //분모확인
-            if (y.equals(0) && op.equals(OperatorType.SUB)) throw new HandleArithmeticException(y);
+            System.out.println(y);
+            if ((y.equals(0L) || y.equals(0.0) || y.equals(0F) || y.equals(0)) && op.equals(OperatorType.SUB)) throw new HandleArithmeticException();
         } catch (HandleArithmeticException e) {
             throw e;
         }
