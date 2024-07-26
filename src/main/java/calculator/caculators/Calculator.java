@@ -11,7 +11,7 @@ public class Calculator<T, R> {
     private final Queue<Double> circleAreas = new LinkedList<>();
 
     //조회
-    public Queue<R> getAllResults() {
+    public Queue<R> getResults() {
         return results;
     }
 
@@ -21,7 +21,7 @@ public class Calculator<T, R> {
     }
 
     //삭제
-    public void deleteResult() {
+    public void removeResult() {
         results.poll();
     }
 
