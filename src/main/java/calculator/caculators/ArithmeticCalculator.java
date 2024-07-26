@@ -32,18 +32,17 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리
         try {
             //분모확인
-            System.out.println(y);
             if ((y.equals(0L) || y.equals(0.0) || y.equals(0F) || y.equals(0)) && op.equals(OperatorType.SUB)) throw new HandleArithmeticException();
         } catch (HandleArithmeticException e) {
             throw e;
         }
         //문제없으면 연산 수행
-        R result = null;
-        if (op == OperatorType.PLUS) result = addOperator.operate(x, y);
-        else if (op == OperatorType.DIV) result = divideOperator.operate(x, y);
-        else if (op == OperatorType.MUL) result = multiplyOperator.operate(x, y);
-        else if (op == OperatorType.SUB) result = subtractOperator.operate(x, y);
-        else if (op == OperatorType.MOD) result = modOperator.operate(x, y);
-        return result;
+        return switch (op) {
+            case PLUS -> addOperator.operate(x, y);
+            case DIV -> divideOperator.operate(x, y);
+            case MUL -> multiplyOperator.operate(x, y);
+            case SUB -> subtractOperator.operate(x, y);
+            case MOD -> modOperator.operate(x, y);
+        };
     }
 }

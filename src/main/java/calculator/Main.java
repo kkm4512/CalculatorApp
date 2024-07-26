@@ -10,7 +10,7 @@ import calculator.util.GetMaxValue;
 
 import java.util.*;
 
-public class Main<T extends Number, R extends Number>  {
+public class Main<T extends Number, R extends Number> {
     private final Class<T> argType;
     private final Class<R> returnType;
 
@@ -22,7 +22,7 @@ public class Main<T extends Number, R extends Number>  {
 
     public final GetMaxValue<T, R> getMaxValue;
 
-    public void calculatorApp() throws Exception  {
+    public void calculatorApp() throws Exception {
         Scanner sc = new Scanner(System.in);
         Calculator<T, R> calculator = new Calculator<>();
         //사칙연산,원의넓이 클래스 인스턴스화
@@ -30,28 +30,25 @@ public class Main<T extends Number, R extends Number>  {
         //값저장,getter,setter 등 있는 클래스 인스턴스화
         CircleCalculator circleCalculator = new CircleCalculator();
         String firstInput = null;
+        //사칙연산 | 원의넓이 입력받을때까지 무한 루핑
         while (true) {
             try {
                 System.out.println("원의넓이를 구하시려면 '원의넓이', 사칙연산을 수행하시려면 '사칙연산'을 기재하세요");
                 firstInput = sc.nextLine();
-                if (!firstInput.equals("사칙연산") && !firstInput.equals("원의넓이")) throw new HandleFirstInputMisMatchException();
+                if (!firstInput.equals("사칙연산") && !firstInput.equals("원의넓이"))
+                    throw new HandleFirstInputMisMatchException();
                 else break;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
 
-        /**
-         * 1. 사칙연산,원의넓이 글자를 제외하곤 전부 exception 처리해야함
-         */
-
-
         //while 문 제어 초기값
         boolean flag = true;
 
         while (flag) {
             if (firstInput.equals("사칙연산")) {
-                //try내에 선언하면 스코프 문제로 하단의 catch, finally 구문에서 잡히지 않아서 상단에 선언
+                //try 내에 선언하면 스코프 문제로 하단의 catch, finally 구문에서 잡히지 않아서 상단에 선언
                 R result = null;
                 try {
                     //첫번째
@@ -109,8 +106,8 @@ public class Main<T extends Number, R extends Number>  {
                      * 4. 그걸 여기서 받고, 그 에러를 출력해주는 느낌이 괜찮을듯?
                      * 5. 만약 에러가 안나면 double 타입으로 만들어서 돌려줍시다 ㅇㅇ;
                      */
-                     String radiusInput = sc.nextLine();
-                    double radius = ConvertInput.convertInput(Double.class,radiusInput);
+                    String radiusInput = sc.nextLine();
+                    double radius = ConvertInput.convertInput(Double.class, radiusInput);
 
                     //반지름값 저장 후, 세팅
                     result = circleCalculator.calculateCircleArea(radius);
@@ -138,9 +135,6 @@ public class Main<T extends Number, R extends Number>  {
                             System.out.println(getMaxValue.getCircleAreaMaxValue(calculator.getCircleAreas(), result));
                     }
                 }
-
-
-
             }
         }
     }
