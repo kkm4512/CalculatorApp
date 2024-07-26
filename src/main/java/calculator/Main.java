@@ -30,7 +30,6 @@ public class Main<T extends Number, R extends Number>  {
         //값저장,getter,setter 등 있는 클래스 인스턴스화
         CircleCalculator circleCalculator = new CircleCalculator();
         System.out.println("원의넓이를 구하시려면 '원의넓이', 사칙연산을 수행하시려면 '사칙연산'을 기재하세요");
-        System.out.println("(exit 입력 시 종료)");
         String firstInput = sc.nextLine();
         /**
          * 1. 사칙연산,원의넓이 글자를 제외하곤 전부 exception 처리해야함
@@ -78,13 +77,13 @@ public class Main<T extends Number, R extends Number>  {
                             flag = !flag;
                             break;
                         case "remove":
-                            calculator.deleteResult();
+                            calculator.removeResult();
                             break;
                         case "inquiry":
-                            System.out.println(calculator.getAllResults());
+                            System.out.println(calculator.getResults());
                             break;
                         case "max":
-                            System.out.println(getMaxValue.getResultMaxValue(calculator.getAllResults(), result));
+                            System.out.println(getMaxValue.getResultMaxValue(calculator.getResults(), result));
                     }
                 }
             } else if (firstInput.equals("원의넓이")) {
