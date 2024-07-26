@@ -4,7 +4,7 @@ import calculator.caculators.ArithmeticCalculator;
 import calculator.caculators.Calculator;
 import calculator.caculators.CircleCalculator;
 import calculator.enums.OperatorType;
-import calculator.exception.HandleFirstInputMisMatch;
+import calculator.exception.HandleFirstInputMisMatchException;
 import calculator.util.ConvertInput;
 import calculator.util.GetMaxValue;
 
@@ -29,12 +29,22 @@ public class Main<T extends Number, R extends Number>  {
         ArithmeticCalculator<T, R> arithmeticCalculator = new ArithmeticCalculator<>(returnType);
         //값저장,getter,setter 등 있는 클래스 인스턴스화
         CircleCalculator circleCalculator = new CircleCalculator();
-        System.out.println("원의넓이를 구하시려면 '원의넓이', 사칙연산을 수행하시려면 '사칙연산'을 기재하세요");
-        String firstInput = sc.nextLine();
+        String firstInput = null;
+        while (true) {
+            try {
+                System.out.println("원의넓이를 구하시려면 '원의넓이', 사칙연산을 수행하시려면 '사칙연산'을 기재하세요");
+                firstInput = sc.nextLine();
+                if (!firstInput.equals("사칙연산") && !firstInput.equals("원의넓이")) throw new HandleFirstInputMisMatchException();
+                else break;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         /**
          * 1. 사칙연산,원의넓이 글자를 제외하곤 전부 exception 처리해야함
          */
-        if (!firstInput.equals("사칙연산") && !firstInput.equals("원의넓이")) throw new HandleFirstInputMisMatch();
+
 
         //while 문 제어 초기값
         boolean flag = true;
