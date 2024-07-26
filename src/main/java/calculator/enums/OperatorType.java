@@ -21,6 +21,14 @@ public enum OperatorType {
     }
 
     public static OperatorType getOperator(String operator) throws Exception {
+        /**
+         *     PLUS("+"),
+         *     DIV("-"),
+         *     MUL("*"),
+         *     SUB("/"),
+         *     MOD("%");
+         *     이것들을 하나씩 순회함
+         */
         for (OperatorType op : OperatorType.values()) {
             if (op.getOperator().equals(operator)) return op;
         }

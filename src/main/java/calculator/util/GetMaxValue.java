@@ -60,7 +60,11 @@ public class GetMaxValue<T extends Number,R extends  Number> {
     public Queue<Double> getCircleAreaMaxValue(Queue<Double> circleAreas, double circleArea){
         Queue<Double> maxValues = new LinkedList<>();
         for ( double d : circleAreas ) {
-            if (d > circleArea) maxValues.add(d);
+            if (d > circleArea) {
+                System.out.println("scanner 들어온값 : " + circleArea);
+                System.out.println("더 크다고 판단한 값 : " + d);
+                maxValues.add(d);
+            }
         }
         return maxValues;
     }
