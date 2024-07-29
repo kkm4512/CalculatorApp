@@ -3,6 +3,7 @@ package calculator.caculators;
 import calculator.enums.OperatorType;
 import calculator.exception.HandleArithmeticException;
 import calculator.exception.HandleOperatorMisMatchException;
+import calculator.interfaces.Operate;
 import calculator.operators.*;
 
 //사칙연산 계산 클래스
@@ -14,6 +15,8 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
     private final MultiplyOperator<T, R> multiplyOperator;
     private final SubtractOperator<T, R> subtractOperator;
     private final ModOperator<T, R> modOperator;
+    private Operate<T,R> operate;
+    private final CalculatorFactory<T,R> calculatorFactory = new CalculatorFactory<>();
 
     //생성자
     public ArithmeticCalculator(Class<R> returnType) {
@@ -37,12 +40,8 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
             throw e;
         }
         //문제없으면 연산 수행
-        return switch (op) {
-            case PLUS -> addOperator.operate(x, y);
-            case DIV -> divideOperator.operate(x, y);
-            case MUL -> multiplyOperator.operate(x, y);
-            case SUB -> subtractOperator.operate(x, y);
-            case MOD -> modOperator.operate(x, y);
-        };
+        //다형성 이용하여 처리
+        Operate<T,R> operatorObject = calculatorFactory.getOperatorObject(x, op, y, returnType);
+        return operatorObject.operate(x,y);
     }
 }

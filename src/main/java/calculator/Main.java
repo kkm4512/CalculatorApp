@@ -69,6 +69,9 @@ public class Main<T extends Number, R extends Number> {
                     // 체크 및 선언
                     T y = ConvertInput.convertInput(argType, yInput);
 
+                    if (x == null || y == null ) {
+                        throw new IllegalArgumentException("x 또는 y의 값은 null 일 수 없습니다");
+                    }
                     result = arithmeticCalculator.calculate(x, op, y);
                     System.out.println("결과: " + result);
                     //하나씩 저장

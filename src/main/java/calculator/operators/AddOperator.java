@@ -13,6 +13,7 @@ public class AddOperator<T extends Number, R extends Number> implements Operate<
         this.returnType = returnType;
     }
 
+
     @Override
     public R operate(T x, T y) {
         return GenericConvertOperator.genericOperator(x, OperatorType.PLUS, y, returnType);
