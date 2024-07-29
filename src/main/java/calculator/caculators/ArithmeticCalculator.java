@@ -10,22 +10,12 @@ import calculator.operators.*;
 // T extends Number : T는 Number 타입중 하나다
 public class ArithmeticCalculator<T extends Number, R extends Number> {
     private final Class<R> returnType;
-    private final AddOperator<T, R> addOperator;
-    private final DivideOperator<T, R> divideOperator;
-    private final MultiplyOperator<T, R> multiplyOperator;
-    private final SubtractOperator<T, R> subtractOperator;
-    private final ModOperator<T, R> modOperator;
     private Operate<T,R> operate;
     private final CalculatorFactory<T,R> calculatorFactory = new CalculatorFactory<>();
 
     //생성자
     public ArithmeticCalculator(Class<R> returnType) {
         this.returnType = returnType;
-        addOperator = new AddOperator<>(this.returnType);
-        divideOperator = new DivideOperator<>(this.returnType);
-        multiplyOperator = new MultiplyOperator<>(this.returnType);
-        subtractOperator = new SubtractOperator<>(this.returnType);
-        modOperator = new ModOperator<>(this.returnType);
     }
 
 
