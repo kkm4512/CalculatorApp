@@ -21,7 +21,6 @@ public class ArithmeticCalculator<T extends Number, R extends Number> {
 
     //사칙연산 수행
     public R calculate(T x, OperatorType op, T y) throws Exception {
-        //try 구문 안에있으니, 스코프 문제로 하단에서 op를 사용하지못함
         //연산자가 잘 들어왔는지, 분모가 0인지 체크후 익셉션처리
         try {
             //분모확인
